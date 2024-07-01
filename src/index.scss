@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-body{
+body {
     margin: 0;
     background-color: #F4F4F7;
     font-family: "Manrope", sans-serif;
@@ -12,7 +12,9 @@ body{
     line-height: 24px;
     color: #242424;
     position: relative;
-    &::after{
+    overflow-x: hidden;
+    
+        &::after {
         content: "";
         position: absolute;
         width: 100%;
@@ -21,6 +23,13 @@ body{
         top: 0;
         left: 0;
         z-index: -1;
-        
+
+    }
+}
+button {
+
+    &:focus,
+    &:focus-visible {
+        outline: none;
     }
 }

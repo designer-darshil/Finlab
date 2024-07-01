@@ -17,6 +17,14 @@ module.exports = {
       },
     },
     extend: {
+      colors: {
+        primary: '#31B099',
+        body: '#FAFAFA',
+        transparent: 'transparent',
+        'white': '#ffffff',
+        'success': '#27C661',
+        'danger': '#F55F5F',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

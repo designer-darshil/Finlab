@@ -4,10 +4,12 @@ import Header from "../../components/Header/Header";
 
 const Layout: React.FC = () => {
   return (
-      <main className="container max-auto">
-        <Header />
+    <main className="px-16 max-md:px-6">
+      <Header />
+      <div className="py-8">
         <Outlet />
-      </main>
+      </div>
+    </main>
   );
 };
 
