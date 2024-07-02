@@ -3,4 +3,5 @@ export const routes = {
   wallets: "/wallets",
   settings: "/settings",
   helpcenter: "/helpcenter",
+  page: "/page",
 };

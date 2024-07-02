@@ -68,28 +68,14 @@ const Header: React.FC = () => {
             </li>
           </ul>
         </div>
-        <div className="flex items-center gap-14">
-          <ul className="w-full flex items-center gap-5 text-start">
+        <div>
+          <ul className="w-full flex items-center gap-3 text-start">
             <li>
               <div className="relative ml-auto flex-1 md:grow-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="lucide lucide-search absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground"
-                >
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <path d="m21 21-4.3-4.3"></path>
-                </svg>
+                <i className="ri-search-line text-lg lucide lucide-search absolute w-12 h-full flex items-center justify-center"></i>
                 <input
                   type="search"
-                  className="flex p-5 py-2 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0disabled:cursor-not-allowed disabled:opacity-50 w-full rounded-full bg-white/10 pl-8 md:w-[200px] lg:w-[260px]"
+                  className="flex p-5 py-2 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 w-full rounded-full bg-white/10 pl-10 md:w-[200px] lg:w-[260px]"
                   placeholder="Search anything here"
                 />
               </div>
@@ -97,7 +83,9 @@ const Header: React.FC = () => {
             <li>
               <DropdownMenu>
                 <DropdownMenuTrigger>
-                  <i className="ri-notification-3-line"></i>
+                  <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                    <i className="ri-notification-3-line"></i>
+                  </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
