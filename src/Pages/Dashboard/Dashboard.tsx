@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, Bar } from "recharts";
 import {
   Card,
   CardContent,
@@ -32,16 +32,61 @@ import MoneyBag from "@/assets/svg/MoneyBag.svg";
 import SportUtility from "@/assets/svg/SportUtility.svg";
 import VideoGame from "@/assets/svg/VideoGame.svg";
 import Woman from "@/assets/svg/Woman.svg";
+import { BarChart } from "lucide-react";
 
 const ExpenseOverview = [
-  { name: "Subscribed", value: 40.1 },
-  { name: "Taxs", value: 300 },
-  { name: "Taxs", value: 300 },
-  { name: "Others", value: 200 },
+  { name: "Subscribed", value: 400.1 },
+  { name: "Taxs", value: 250 },
+  { name: "Taxs", value: 100 },
+  { name: "Others", value: 180 },
 ];
 
 const COLORS = ["#31B099", "#E7854D", "#C65468", "#4D81E7"];
 const ExpenseAnalysis = [
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: "Page B",
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: "Page C",
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: "Page D",
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: "Page E",
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: "Page F",
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: "Page G",
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
+const IncomeAnalysis = [
   {
     name: "Page A",
     uv: 4000,
@@ -246,19 +291,9 @@ const Dashboard: React.FC = () => {
                     </p>
                   </div>
                   <div>
-                    <LineChart
-                      className="max-md:w-full"
-                      width={300}
-                      height={80}
-                      data={ExpenseAnalysis}
-                    >
-                      <Line
-                        type="monotone"
-                        dataKey="pv"
-                        stroke="#8884d8"
-                        strokeWidth={2}
-                      />
-                    </LineChart>
+                    <BarChart width={650} height={120} data={IncomeAnalysis}>
+                      <Bar dataKey="uv" fill="#8884d8" />
+                    </BarChart>
                   </div>
                 </CardContent>
               </Card>

@@ -95,10 +95,11 @@ const Header: React.FC = () => {
                     <i className="ri-notification-3-line"></i>
                   </div>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[428px] right-0">
+                <DropdownMenuContent align="end" className="w-[428px] mt-3">
                   <DropdownMenuLabel className="text-xl p-3">
                     Notification
                   </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
                   <DropdownMenuItem>
                     <div className="flex items-center justify-start gap-3 w-full py-2 last:pb-0">
                       <div className="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center">
@@ -132,7 +133,7 @@ const Header: React.FC = () => {
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent align="end">
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>Profile</DropdownMenuItem>
