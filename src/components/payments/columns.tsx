@@ -20,7 +20,7 @@ type Payment = {
   backgroundColor: string;
   email: string;
   invoiceNumber: string;
-  transactiontype: TransactionType; // Add this line to your Payment type
+  transactiontype: TransactionType;
 };
 export const columns: ColumnDef<Payment>[] = [
   {

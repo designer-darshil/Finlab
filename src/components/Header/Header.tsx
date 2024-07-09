@@ -10,20 +10,40 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import moneytick from "@/assets/svg/money-tick.svg";
+import UserAvatar from "@/assets/UserAvatar.jpg";
 
 import { routes } from "@/routes/routes";
+import { useEffect, useState } from "react";
 const Header: React.FC = () => {
+  const [isMobileSidebarOpen, setisMobileSidebarOpen] = useState(false);
+  useEffect(() => {
+    const body = document.body;
+    if (isMobileSidebarOpen) {
+      body.classList.add("overflow-hidden");
+    } else {
+      body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      body.classList.remove("overflow-hidden");
+    };
+  }, [isMobileSidebarOpen]);
   return (
     <>
       <div className="flex items-center justify-between gap-3 text-white py-8 max-md:py-4">
         <div className="flex items-center gap-14">
           <div className="flex">
-            <div className=" hidden max-md:block">
-              <i className="ri-menu-line w-10 h-10 bg-white/10 rounded-full flex items-center justify-center"></i>
+            <div className="md:hidden">
+              <button
+                onClick={() => setisMobileSidebarOpen(!isMobileSidebarOpen)}
+                className="text-white focus:outline-none cursor-pointer"
+              >
+                <i className="ri-menu-line w-10 h-10 bg-white/10 rounded-full flex items-center justify-center"></i>
+              </button>
             </div>
-            <button type="button" className="max-md:hidden">
-              <img src={LogoImage} alt="" />
-            </button>
+            <NavLink to="/" className="max-md:hidden">
+              <img src={LogoImage} alt="LogoImage" />
+            </NavLink>
           </div>
           <ul className="w-full flex items-center gap-2 text-start max-md:hidden">
             <li>
@@ -76,6 +96,7 @@ const Header: React.FC = () => {
             </li>
           </ul>
         </div>
+
         <div>
           <ul className="w-full flex items-center gap-3 text-start">
             <li>
@@ -129,7 +150,7 @@ const Header: React.FC = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarImage src={UserAvatar} />
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
                 </DropdownMenuTrigger>
@@ -145,6 +166,86 @@ const Header: React.FC = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className={`md:hidden ${isMobileSidebarOpen ? "block" : "hidden"}`}>
+        <div
+          className="absolute text-white z-[99] backdrop-blur-sm bg-white/30 rounded-full flex items-center justify-center w-14 h-14 end-6 top-16"
+          typeof="button"
+          onClick={() => setisMobileSidebarOpen(!isMobileSidebarOpen)}
+        >
+          <i className="ri-close-line text-white text-2xl"></i>
+        </div>
+        <div className="bg-[#1C2634] md:hidden fixed inset-0 z-50 w-3/4 h-full p-6">
+          <div className="grid grid-rows-[60px_1fr_50px] gap-6 h-full">
+            <NavLink to="/" className="">
+              <img src={LogoImage} alt="LogoImage" />
+            </NavLink>
+            <ul className="flex flex-col items-center gap-4 text-start">
+              <li className="w-full">
+                <NavLink
+                  onClick={() => setisMobileSidebarOpen(!isMobileSidebarOpen)}
+                  to={routes.default}
+                  className={({ isActive }) =>
+                    `py-4 px-8 rounded-full w-full block text-white ${
+                      isActive ? "bg-white/10" : "bg-transparent"
+                    }`
+                  }
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+              <li className="w-full">
+                <NavLink
+                  onClick={() => setisMobileSidebarOpen(!isMobileSidebarOpen)}
+                  to={routes.wallets}
+                  className={({ isActive }) =>
+                    `py-4 px-8 rounded-full w-full block text-white ${
+                      isActive ? "bg-white/10" : "bg-transparent"
+                    }`
+                  }
+                >
+                  Wallets
+                </NavLink>
+              </li>
+              <li className="w-full">
+                <NavLink
+                  onClick={() => setisMobileSidebarOpen(!isMobileSidebarOpen)}
+                  to={routes.settings}
+                  className={({ isActive }) =>
+                    `py-4 px-8 rounded-full w-full block text-white ${
+                      isActive ? "bg-white/10" : "bg-transparent"
+                    }`
+                  }
+                >
+                  Settings
+                </NavLink>
+              </li>
+              <li className="w-full">
+                <NavLink
+                  onClick={() => setisMobileSidebarOpen(!isMobileSidebarOpen)}
+                  to={routes.helpcenter}
+                  className={({ isActive }) =>
+                    `py-4 px-8 rounded-full w-full block text-white ${
+                      isActive ? "bg-white/10" : "bg-transparent"
+                    }`
+                  }
+                >
+                  Help & Center
+                </NavLink>
+              </li>
+            </ul>
+            <button
+              onClick={() => setisMobileSidebarOpen(!isMobileSidebarOpen)}
+              className="py-4 px-8 rounded-full w-full text-start block text-error-600"
+            >
+              Log Out
+            </button>
+          </div>
+        </div>
+        <div
+          className="fixed inset-0 bg-[#1A1C1E]/30 backdrop-blur-sm z-[49]"
+          onClick={() => setisMobileSidebarOpen(false)}
+        ></div>
       </div>
     </>
   );

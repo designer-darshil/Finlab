@@ -214,7 +214,9 @@ const Dashboard: React.FC = () => {
                   <CardTitle>
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <h2 className="text-xl font-bold">Total Balance</h2>
+                        <h2 className="text-2xl max-md:text-xl font-bold">
+                          Total Balance
+                        </h2>
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger>
@@ -251,12 +253,14 @@ const Dashboard: React.FC = () => {
               </Card>
             </div>
             <div className="grid grid-cols-1 items-start justify-start col-span-2 gap-8">
-              <Card className="border-0 w-full">
+              <Card className="border-0 w-full overflow-hidden">
                 <CardHeader>
                   <CardTitle>
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <h2 className="text-xl font-bold">Income Analysis</h2>
+                        <h2 className="text-2xl max-md:text-xl font-bold">
+                          Income Analysis
+                        </h2>
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger>
@@ -302,7 +306,9 @@ const Dashboard: React.FC = () => {
                   <CardTitle>
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <h2 className="text-xl font-bold">Expense Analysis</h2>
+                        <h2 className="text-2xl max-md:text-xl font-bold">
+                          Expense Analysis
+                        </h2>
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger>
@@ -359,7 +365,9 @@ const Dashboard: React.FC = () => {
                   <CardTitle>
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <h2 className="text-xl font-bold">Expense Analysis</h2>
+                        <h2 className="text-2xl max-md:text-xl font-bold">
+                          Expense Analysis
+                        </h2>
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger>
@@ -455,7 +463,9 @@ const Dashboard: React.FC = () => {
                   <CardTitle>
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <h2 className="text-xl font-bold">My Pocked Plans</h2>
+                        <h2 className="text-2xl max-md:text-xl font-bold">
+                          My Pocked Plans
+                        </h2>
                         <TooltipProvider>
                           <Tooltip>
                             <TooltipTrigger>
