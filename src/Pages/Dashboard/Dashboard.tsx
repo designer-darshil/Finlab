@@ -145,12 +145,12 @@ async function getData(): Promise<Payment[]> {
     }[status];
 
     return {
-      id: "728ed52f",
       invoice: "B12341",
       amount: Math.random() * 1000,
       status: status,
       backgroundColor: backgroundColor,
       email: "m@example.com",
+      transactionType,
     };
   });
 }
