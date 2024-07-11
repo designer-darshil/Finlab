@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/dialog";
 type TransactionType = "Subscribe" | "Receive" | "Transfer";
 
-type Payment = {
+export type Payment = {
   id: string;
   amount: number;
   status: "accepted" | "pending" | "rejected";
