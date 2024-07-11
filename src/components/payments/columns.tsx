@@ -67,20 +67,18 @@ export const columns: ColumnDef<Payment>[] = [
     },
   },
   {
-    accessorKey: "transactiontype",
+    accessorKey: "transactionType",
     header: "Transaction Type",
     cell: ({
       row,
     }: {
       row: { getValue: (key: string) => TransactionType };
     }) => {
-      const transactionType: TransactionType = row.getValue("transactiontype");
+      const transactionType: TransactionType = row.getValue("transactionType");
 
-      // Directly using transactionType since it is properly typed
       return (
-        // <div className="font-bold bg-secondary-200">{transactionType}</div>
         <div className="font-bold bg-secondary-100 text-secondary-400 rounded-md inline py-1 px-2">
-          Subscribe
+          {transactionType}
         </div>
       );
     },
